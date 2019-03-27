@@ -1,0 +1,76 @@
+<!--pages/invoice/invoice.wxml-->
+<view class='iv-wrap'>
+  <view class='iv-outer'>
+    <view class='iv-type iv-one'>
+      <view class='iv-typeTxt'>发票类型</view>
+      <view class='iv-typeRadio'>
+        <radio-group class="iv-radio-group" bindchange="radioChange">
+          <label class="iv-radioC">
+            <radio class="iv-radio" checked='true' value="企业"  data-type="0" />
+            <image src='{{ivType0==0?"../../images/iv-check.jpg":"../../images/iv-noCheck.jpg"}}'/>企业 
+          </label>
+          <label class="iv-radioP">
+            <radio class="iv-radio" value="个人" data-type="1"/>
+            <image src='{{ivType1==1?"../../images/iv-noCheck.jpg":"../../images/iv-check.jpg"}}'/>个人
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <!-- 公司发票 --> 
+    <view class='iv-tab0' wx:if='{{isCompany}}'>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>公司抬头</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='请填写公司抬头' value='' bindinput='ivgetCompanyName'></input>
+          </view>
+      </view>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>公司税号</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='请填写公司税号' value='' bindinput='ivgetCompanyTax'></input>
+          </view>
+      </view>
+      <view class='iv-type iv-explain'>
+          <text class='iv-Txt'>输入完整抬头信息，以开具增值税发票</text><image src='../../images/iv-why.png'></image>
+      </view>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>电话号码</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='请填写电话号码' value='' bindinput='ivgetCompanyPhone'></input>
+          </view>
+      </view>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>单位地址</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='单位注册地址' value='' bindinput='ivgetCompanyAddress'></input>
+          </view>
+      </view>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>开户银行</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='单位的开户行名称' value='' bindinput='ivgetCompanyBane'></input>
+          </view>
+      </view>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>银行账号</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='单位的银行账号' value='' bindinput='ivgetCompanyCode'></input>
+          </view>
+      </view>
+    </view>
+
+    <!-- 个人发票 -->
+    <view class='iv-tab1' wx:else>
+      <view class='iv-type'>
+          <view class='iv-typeTxt'>抬头名称</view>
+          <view class='iv-typeR'>
+            <input type='text' placeholder-class="phcolor" placeholder='建议填写个人姓名/店名' value='' bindinput='ivgetPersonName'></input>
+          </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 保存按钮 -->
+    <button class='iv-btn' wx:if='{{isCompany}}' bindtap='ivSaveCompany'>保存</button>
+    <button class='iv-btn' wx:else bindtap='ivSavePerson'>保存</button>
+</view>

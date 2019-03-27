@@ -1,0 +1,76 @@
+<!--pages/courseDetail/courseDetail.wxml-->
+<view class="cd-container">
+    <view class='cd-wrap'>
+      <live-player id="player" src="rtmp://47.105.153.172:1935/live/stream" mode="live" autoplay bindstatechange="statechange" binderror="error">
+        <!-- 播放按钮 -->
+        <cover-view class='cd-playBg'>
+          <cover-image src='{{cdPlayImg}}' class='cd-play' bindtap="bindPlay" id='cdPlayImg' wx:if='{{!flag}}'></cover-image>
+          <cover-image src='{{cdPauseImg}}' class='cd-pause' bindtap="bindPause" id='cdPauseImg' wx:else></cover-image>
+        </cover-view>
+      </live-player>
+    </view>
+    <!-- <view class="btn-area">
+      <button  class="page-body-button" type="primary">播放</button>
+      <button bindtap="bindPause" class="page-body-button" type="primary">暂停</button>
+      <button bindtap="bindStop" class="page-body-button" type="primary">停止</button>
+      <button bindtap="bindResume" class="page-body-button" type="primary">恢复</button>
+      <button bindtap="bindMute" class="page-body-button" type="primary">静音</button>
+    </view> -->
+    <view class='cd-liveWrap'>
+      <view class='cd-liveTxt'>直播时间</view>
+      <view class='cd-liveTime'>2019-03-12</view>
+    </view>
+
+    <!-- <button class='button' bindtap='buttonTap' type='primary'>显示弹窗</button>
+    <modal title="我是标题" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+        <view class='cd-liveWrap'>
+          <view class='cd-liveTxt'>重播计划</view>
+          <view class='cd-liveTime'>
+            <view class='cd-liveView'><view class='cd-liveItem'>日期</view><view class='cd-liveItem'>重播时间</view></view>
+            <view class='cd-liveView' wx:for="{{restartPlan}}" wx:key="{{index}}"><view class='cd-liveItem'>{{item.date}}</view><view class='cd-liveItem'>{{item.time}}</view></view>
+          </view>
+        </view>
+      </modal> -->
+
+    <view class='cd-liveWrap' style='height:{{restartHeight}};'>
+      <view class='cd-liveTxtR' id='cd-liveTxt'>重播计划</view>
+      <view class='cd-arrowWrap' data-id='{{dataId}}' bindtap='changeRestartHeight'>
+        <image src='../../images/arrow-down.png' class='cd-arrowDown'></image>
+      </view>
+      <view class='cd-liveTimeR' id='cd-liveTime'>
+        <view class='cd-liveView' wx:for="{{restartPlan}}" wx:key="{{index}}"><view class='cd-liveItem'>{{item.show_time}}</view></view>
+      </view>
+    </view>
+
+  </view>
+
+<view class='cd-liveTab'>
+  <view class='cd-tabHeader'>
+    <view  class="{{tab==0?'cd-tabItem cd-tabHover':'cd-tabItem'}}" bindtap='cdTabHeader' data-item='0'>专家介绍</view>
+    <view class="{{tab==1?'cd-tabItem cd-tabHover':'cd-tabItem'}}" bindtap='cdTabHeader' data-item='1'>课程介绍</view>
+  </view>
+  <view class='cd-tabLine' style='transform:{{tabLine}}'></view>
+  
+  <view class='cd-tabContent' id='cd-tabContent' style='transform:{{tabContent}}; height:{{tabHeight}}px' >
+  <!-- 专家介绍 -->
+    <view class='cd-tabExpirse' id='cd-tabExpirse'>
+      <view class="cd-tabExpertItem">
+            <view class="cd-tabExpressImg"><image src='{{showExpertData.avatar_url? showExpertData.avatar_url : "../../images/defaultImg.png"}}'/></view>
+            
+            <view class="cd-tabExpressTxt">
+              <view class="cd-tabExpressName">{{showExpertData.name}}</view>
+              <view class="cd-tabExpressExplain">{{showExpertData.desc}}</view>
+            </view>
+       </view>
+    </view>
+  <!-- 课程介绍 -->
+    <view class='cd-tabCourse' id='cd-tabCourse'>
+        <view class='courseName'>{{showCourseData.name}}</view>
+        <view class='courseDesc'>{{showCourseData.desc}}</view>
+    </view>
+  </view>
+</view>
+<!-- <view class='paywrap'> -->
+  <button class='payBtn'>立即支付</button>
+<!-- </view> -->
+ 

@@ -1,0 +1,21 @@
+<!--logs.wxml-->
+<image class='cl-bg' src='../../images/courBgTop33.png'></image>
+    <view class="cl-wrap">
+      <view class="cl-item" wx:for="{{courseList}}" wx:for-index="index" data-id="{{item.course_id}}" wx:for-item="item" bindtap="goCourseDetail" wx:key="index">
+        <view class="cl-item-l">
+          <image src='{{item.desc_url? item.desc_url : "../../images/defaultImg.png"}}'/>
+        </view>
+        <view class="cl-item-r" wx:for-index="index">
+          <view class="courseName" >{{item.name}}</view>
+          <!-- <view class="teacherName" >本期讲师：{{txt.teacherName}}</view> -->
+          <view class="publicTime" >{{item.created_time}}</view>
+          <text class="desc" >{{item.desc}}</text>
+        </view>
+        <!-- <view class="cl-item-arrow"><image src='../../images/arrow-right.png'></image></view> -->
+        <!-- 收藏 -->
+        <view class='collection' catchtap="changePic" data-courseid="{{item.course_id}}" data-expertid="{{item.expert_id}}" data-checks="{{item.collected==true?true:false}}">
+          <image class='col-icon' wx:if="{{item.collected}}" src='../../images/collection2.png'></image>
+          <image class='col-icon' wx:else src='../../images/collection1.png'></image>
+        </view>
+      </view>
+    </view>

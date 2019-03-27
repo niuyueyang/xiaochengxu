@@ -1,0 +1,135 @@
+/* pages/invoice/invoice.wxss */
+.iv-wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.iv-outer{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding-left: 41rpx;
+}
+.iv-type{
+  width: 100%;
+  height: 185rpx;
+  overflow: hidden;
+  border-bottom:1px solid #eeeeee;
+  color: #333333;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+.iv-one{
+  width: 100%;
+  height: 150rpx;
+}
+.iv-typeTxt{
+  margin-top: 20rpx;
+  padding-left: 4rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.iv-typeRadio{
+  margin-top: 30rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.iv-radio-group{
+  width: 360rpx;
+  height: auto;
+  overflow: hidden;
+  color: #333333;
+  font-size: 32rpx;
+}
+.iv-radioC{
+  margin-right: 66rpx;
+  float: left;
+  position: relative;
+}
+.iv-radioP{
+  float: left;
+  position: relative;
+}
+.iv-radio-group radio{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.iv-radioC image,.iv-radioP image{
+  width: 32rpx;
+  height: 32rpx;
+  display: block;
+  float: left;
+  margin-right: 32rpx;
+  margin-top: 6rpx;
+}
+/* radio{
+  width: 42rpx;
+  height: 42rpx;
+} */
+.iv-tab0{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+}
+.iv-typeR{
+  height: 80rpx;
+  width: 90%;
+  background-color: #efefef;
+  overflow: hidden;
+  margin-top: 23rpx;
+  box-sizing: border-box;
+  clear: both;
+  border-radius: 40rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.iv-typeR input{
+  color: #ccc;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.phcolor { 
+  color: #cccccc;
+  font-size: 32rpx;
+}
+.iv-explain{
+  color: #8d8d8d;
+  font-size: 28rpx;
+  line-height: 105rpx;
+  height: 105rpx;
+}
+.iv-Txt{
+  float: left;
+}
+.iv-explain image{
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+  margin-top: 33rpx;
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+}
+.iv-btn{
+  width: 687rpx;
+  height: 95rpx;
+  background-color: #07c160;
+  margin: 0 auto;
+  line-height: 95rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50rpx;
+  margin-top: 54rpx;
+}

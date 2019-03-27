@@ -1,0 +1,48 @@
+<!--banner-->
+<swiper class = "banner" 
+  indicator-dots="{{indicatorDots}}" 
+  current="{{current}}" 
+  circular="{{circular}}" 
+  indicator-active-color="{{indicatorActiveColor}}" 
+  indicator-color="{{indicatorColor}}" 
+  autoplay="{{autoplay}}" 
+  interval="{{interval}}" 
+  duration="{{duration}}" >  
+  <block wx:for="{{banners}}" wx:key="id">
+    <swiper-item>  
+      <image src="{{item.img}}" model="aspectFit" data-id="{{index}}" bindtap="swiperClick"/>/>  
+    </swiper-item>  
+  </block> 
+</swiper>
+<!-- 当前直播 -->
+<view class='curLive'>
+  <text class='title'>当前直播</text>
+  <image class='curIcon' src='../../images/icon1.png'></image>
+  <view class='curWrap'>
+    <swiper display-multiple-items='2.5' next-margin='20rpx' previous-margin="20rpx">    
+      <block wx:for="{{curImgUrls}}"  class='box' wx:key='index'>             
+        <swiper-item>														
+            <image src="{{item.logo_url.length==0? '../../images/curImg1.jpg':item.logo_url}}"></image>
+            <view>{{item.name}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<!-- 历史回放 -->
+<view class='historyLive'>
+  <text class='title'>历史回放</text>
+  <image class="hisIcon" src='../../images/icon2.png'></image>
+  <view class='hisWrap'>
+     <block wx:for="{{historyJson}}" wx:key="id">
+      <view class='hisItem' bindtap="hisItemClick" data-courseId="{{item.course_id}}" data-expertId="{{item.expert_id}}">  
+         <image src="{{item.logo_url.length==0?'../../images/curImg1.jpg':item.logo_url}}" data-id="{{item.course_id}}" data-expertId="{{item.expert_id}}"/> 
+         <view class='wrap-r'>
+          <text>{{item.name}}</text>
+          <view class='home-desc'>{{item.desc}}</view>
+          <text class='home-time'>{{item.show_time}}</text>
+         </view> 
+      </view>  
+  </block> 
+  </view>
+</view>

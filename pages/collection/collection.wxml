@@ -1,0 +1,36 @@
+<view class="ct-wrap">
+ <view class="ct-tab">
+  <view class="border-right {{selected1?'active':'default'}}" bindtap="selected1">课程收藏</view>
+  <view class="{{selected2?'active':'default'}}" bindtap="selected2">专家收藏</view>
+ </view>
+ <view class='ct-con'>
+  <!-- 课程收藏 -->
+  <view class="{{selected1?'show':'hidden'}}">
+    <!-- item -->
+    <view class="course-item" wx:for="{{ctCourse}}" wx:for-index="index" data-id="{{item.id}}" wx:for-item="item" bindtap="goCourseDetail" wx:key="index">
+        <view class="ct-item-l">
+          <image src="{{item.ctImgs}}"/>
+        </view>
+        <view class="ct-item-r" wx:for="{{item.ctTxts}}" wx:for-index="index" wx:for-item="txt" wx:key="index">
+          <view class="courseName" >{{txt.courseName}}</view>
+          <view class="teacherName" >本期讲师：{{txt.teacherName}}</view>
+          <view class="publicTime" >{{txt.time}}</view>
+        </view>
+      </view>
+  </view>
+  <!-- 专家收藏 -->
+  <view class="{{selected2?'show':'hidden'}}">
+     <!-- item -->
+    <view class="expert-item" wx:for="{{ctExpert}}" wx:for-index="index" data-id="{{item.id}}" wx:for-item="item" bindtap="goCourseDetail" wx:key="index">
+        <view class="ct-item-l">
+          <image src="{{item.ctImgs}}"/>
+        </view>
+        <view class="ct-item-r" wx:for="{{item.ctTxts}}" wx:for-index="index" wx:for-item="txt" wx:key="index">
+          <view class="teacherName" >本期讲师：{{txt.teacherName}}</view>
+          <view class="courseName" >{{txt.courseName}}</view>
+          <view class="publicTime" >{{txt.time}}</view>
+        </view>
+      </view>
+  </view>
+ </view>
+</view>

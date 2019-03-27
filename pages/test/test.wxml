@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}">1111</view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">22222</view>
+

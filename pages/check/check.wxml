@@ -1,0 +1,7 @@
+<!--pages/check/check.wxml-->
+<view class='indexWrap'>
+  <view class='index-Text'>欢迎来到汉邦智慧</view>
+  <view class='index-TextBottom'>汉邦智慧，智慧生活</view>
+  <image src='../../images/index-icon.jpg' class='index-Img'></image>
+  <button class='index-btn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">开启你的智慧生活</button>
+</view>

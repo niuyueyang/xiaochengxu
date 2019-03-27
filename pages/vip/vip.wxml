@@ -1,0 +1,42 @@
+<!--logs.wxml-->
+<view class='el-introduce'>
+  <view class='expert-pic'><image src='../../images/touxiang1.png'></image></view>
+  <view class='expert-txt'>
+    <view class='expertName'>李专家</view>
+    <view class='introduce'>专家的简介</view>
+  </view>
+</view>
+<image class='cl-bg' src='../../images/courBgTop33.png'></image>
+<view class="vip-wrap">
+  <view class='inner'>
+    <view class='vip-title'>您想购买多久的会员呢？</view>
+    <view class='con'>
+     <view class='con-item year'>
+      <text>自动包月</text>
+      <text>￥19</text>
+      <text>原价￥39</text>
+     </view>
+     <view class='con-item month'>
+      <text>自动包季</text>
+      <text>￥68</text>
+      <text>原价￥110</text>
+     </view>
+     <view class='con-item year'>
+      <text>自动包年</text>
+      <text>￥258</text>
+      <text>原价￥308</text>
+     </view>
+    </view>
+    <view class='sel'>
+    
+      <radio checked="false" value='到期自动续费一个月，可随时取消' />
+      到期自动续费一个月，可随时取消
+    </view>
+     <button class='payBtn'>支付</button>
+     <view class='renew'>
+      《汉邦智慧自动续费协议》
+     </view>
+  </view>
+ 
+</view>
+

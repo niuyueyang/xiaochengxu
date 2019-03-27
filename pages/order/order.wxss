@@ -1,0 +1,128 @@
+/* pages/order/order.wxss */
+.od-wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+.od-itemWrap{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-bottom: 50rpx;
+  background-color: #f5f5f5;
+}
+.od-item{
+  width: 707rpx;
+  height: 361rpx;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  padding: 31rpx 10rpx 15rpx 10rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.od-outer{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-bottom: 3rpx solid #e0deea;
+  box-sizing: border-box;
+  padding-bottom: 34rpx;
+}
+.od-name{
+  color: #5f5788;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-left: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 42rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.od-price{
+  margin-top: 30rpx;
+  color: #b2b7be;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+}
+.od-price text{
+  color: #ff6161;
+}
+.od-expert{
+  margin-top: 28rpx;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-left: 7rpx;
+  box-sizing: border-box;
+}
+.od-expertImg{
+  width: 64rpx;
+  height: 64rpx;
+  border:2rpx solid #f1f0f6;
+  overflow: hidden;
+  float: left;
+  border-radius: 50%;
+}
+.od-expertImg image{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  border-radius: 50%;
+}
+.od-expertName{
+  font-size: 30rpx;
+  margin-top: 17rpx;
+  color: #d4d7dc;
+  margin-left: 24rpx;
+  float: left;
+}
+.od-bottom{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.od-time{
+  width: 270rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  overflow: hidden;
+  background-color: #f7f9fd;
+  border-radius: 10rpx;
+  color: #b0b5bf;
+  font-size: 22rpx;
+  float: left;
+}
+.od-status{
+  width: 109rpx;
+  height: 40rpx;
+  float: right;
+  font-size: 28rpx;
+  color: #a6abb4;
+  overflow: hidden;
+  text-align: center;
+}
+.od-arrow{
+  width: 16rpx;
+  height: 28rpx;
+  overflow: hidden;
+  position: absolute;
+  right: 24rpx;
+  top: 116rpx;
+}
+.od-arrow image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}

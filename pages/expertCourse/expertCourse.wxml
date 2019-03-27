@@ -1,0 +1,26 @@
+<!--logs.wxml-->
+<view class='el-introduce'>
+  <view class='expert-pic'><image src='../../images/nick.jpg'></image></view>
+  <view class='expert-txt'>
+    <view class='expertName'>李专家</view>
+    <view class='introduce'>专家的简介</view>
+  </view>
+  <view class='vip-btn' bindtap='goVip'>
+    <image class='vip-icon' src='../../images/vip.png'></image>
+    <view class='vip-txt'>开通VIP</view>
+  </view>
+</view>
+<image class='cl-bg' src='../../images/courBgTop33.png'></image>
+<view class="cl-wrap">
+  <view class="cl-item" wx:for="{{courseList}}" wx:for-index="index" data-id="{{item.course_id}}" wx:for-item="item" bindtap="goCourseDetail" wx:key="index">
+    <view class="cl-item-l">
+     <image src='{{item.desc_url? item.desc_url : "../../images/defaultImg.png"}}'/>
+    </view>
+    <view class="cl-item-r">
+      <view class="courseName" >{{item.name}}</view>
+      <view class="publicTime" >{{item.created_time}}</view>
+      <view class="courseTxt" >{{item.desc}}</view>
+    </view>
+    <!-- <view class="cl-item-arrow"><image src='../../images/arrow-right.png'></image></view> -->
+  </view>
+</view>

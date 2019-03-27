@@ -1,0 +1,73 @@
+<!--logs.wxml-->
+<view class='my-wrapper'>
+
+<!-- header -->
+  <view class="my-header">
+    <image src='../../images/my-headerBg.jpg' class='my-headerImg'></image>
+    <view class='my-nameWrap'>
+        <button wx:if="{{hasUserInfo==false}}" class='my-loginBtn'   open-type="getUserInfo" 
+	bindgetuserinfo="bindGetUserInfo">授权登录</button>
+        <block wx:else>
+          <view class='my-icon'><image src='{{userInfo.avatarUrl}}'></image></view>
+          <view class='my-name'>
+            <text>{{userInfo.nickName}}</text>
+          </view>
+        </block>
+        <view class='my-headerBottom'>
+          <view class='my-headerItem'>
+            <view>34</view>
+            <view>我的收藏</view>
+          </view>
+          <view class='my-headerItem'>
+            <view>34</view>
+            <view>我的购买</view>
+          </view>
+        </view>
+        <view class='my-headerBottomBg'><image src='../../images/my-wave.jpg'></image></view>
+    </view>
+  </view>
+
+<!-- 我的订单 -->
+<view class='my-orderWrap'>
+  <view class='my-orderHeader'>
+    <text class='my-orderTitle'>我的订单</text>
+    <navigator url='../order/order' class='my-orderAll' hover-class='my-hover'>查看全部订单></navigator>
+  </view>
+  <view class='my-orderContent'>
+    <navigator url='../newmy/newmy' class='my-orderItem' hover-class='my-hover'>
+      <image src='../../images/my-waitMoney.jpg'></image>
+      <text>待付款</text>
+    </navigator>
+    <navigator url='../newmy/newmy' class='my-orderItem' hover-class='my-hover'>
+      <image src='../../images/my-evaluate.jpg'></image>
+      <text>待评价</text>
+    </navigator>
+  </view>
+</view>
+
+
+<!-- 分类 -->
+<view class='my-classifyWrap'>
+  <view class='my-classifyHeader'>
+    <text>我的工具栏</text>
+  </view>
+  <view class='my-classifyContent'>
+    <navigator url='../collection/collection' class='my-classifyItem' hover-class='my-hover'>
+      <image src='../../images/my-collect.jpg' class='my-collectImg'></image>
+      <text>我的收藏</text>
+      <image src='../../images/my-right.jpg' class='my-rightImg'></image>
+    </navigator>
+    <navigator url='../order/order' class='my-classifyItem' hover-class='my-hover'>
+      <image src='../../images/my-buy.jpg' class='my-buyImg'></image>
+      <text>我的购买</text>
+      <image src='../../images/my-right.jpg' class='my-rightImg'></image>
+    </navigator>
+    <navigator url='../invoice/invoice' class='my-classifyItem' hover-class='my-hover'>
+      <image src='../../images/my-fapiao.jpg' class='my-fapiaoImg'></image>
+      <text>我的发票</text>
+      <image src='../../images/my-right.jpg' class='my-rightImg'></image>
+    </navigator>
+  </view>
+
+</view>
+</view>

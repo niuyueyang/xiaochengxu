@@ -1,0 +1,26 @@
+<!--pages/order/order.wxml-->
+<view class='od-wrap'>
+  <view class='od-itemWrap'>
+    <navigator url='../courseDetail/courseDetail?courseUrl={{item.courseUrl}}' class='od-item' wx:for="{{orderList}}" wx:key="index" >
+
+      <!-- 下划线上部分 -->
+      <view class='od-outer'>
+        <view class='od-name'>{{item.orderName}}</view>
+        <view class='od-price'>价格：<text>{{item.orderPrice}}</text>元</view>
+        <view class='od-expert'>
+          <view class='od-expertImg'><image src='{{item.orderExpertImg}}'></image></view>
+          <view class='od-expertName'>{{item.orderExpertName}}</view>
+        </view>
+      </view>
+
+      <!-- 下划线下部分 -->
+      <view class='od-bottom'>
+       <view class='od-time'>{{item.orderTime}}</view> 
+       <view class='od-status'>{{item.orderStatus==0?'已完成':'未完成'}}</view>
+      </view>
+
+      <!-- 箭头 -->
+      <view class='od-arrow'><image src='../../images/od-arrow.png'></image></view>
+    </navigator>
+  </view>
+</view>
